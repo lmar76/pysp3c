@@ -53,3 +53,14 @@ class TestSP3cReader:
         sp3 = pysp3c.SP3cReader(shared_datadir / file)
         assert len(sp3.data) == 8
         assert sp3.data[0] == expected[0]
+
+    @pytest.mark.parametrize(
+        'file, expected',
+        [
+            ('test.sp3', 'IGS08')
+        ]
+    )
+    def test_coordinate_system(self, shared_datadir, file, expected):
+        """Test the `SP3cReader.coordinate_system` property."""
+        sp3 = pysp3c.SP3cReader(shared_datadir / file)
+        assert sp3.coordinate_system == expected

@@ -20,6 +20,8 @@ class SP3cReader:
             record = ''
             data = []
             for n, text in enumerate(fh, 1):
+                if n == 1:
+                    self._coordinate_system = text[46:51]
                 if n > 22:
                     if text.startswith('* '):
                         if record != '':
@@ -71,3 +73,7 @@ class SP3cReader:
     @property
     def data(self):
         return self._data
+
+    @property
+    def coordinate_system(self):
+        return self._coordinate_system
