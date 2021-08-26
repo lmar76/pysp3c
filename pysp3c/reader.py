@@ -3,8 +3,6 @@ import os
 import pathlib
 from typing import Dict, List, Union
 
-__version__ = '0.1'
-
 
 class SP3cReader:
     """SP3c file reader.

@@ -1,1 +1,10 @@
+*.egg-info/
+build/
+dist/
+
+.env
+
+.pytest_cache/
+.tox/
+
 .idea/
